@@ -15,8 +15,8 @@ DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
 device1 = Device1(ipAddress="172.16.1.1", port="3332")
-
-l = [device1]
+device2 = Device1(ipAddress="192.168.1.1", port="1111")
+l = [device1,device2]
 
 for i in l:
     session.add(i)
