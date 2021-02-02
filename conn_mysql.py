@@ -23,3 +23,5 @@ for i in l:
     session.add(i)
 
 session.commit()
+
+print("Hello World!!!")
