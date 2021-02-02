@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from class_sqlalch import Device, Base
+from class_sqlalch import Device1, Base
 
 try:
     engine = create_engine('mysql+pymysql://sabry:password123@localhost:3306')
@@ -14,11 +14,9 @@ Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
-device1 = Device(ipAddress="172.16.1.1", port="3332")
-device2 = Device(ipAddress="10.10.10.1", port="8080")
-device3 = Device(ipAddress="192.168.30.101", port="1111")
+device1 = Device1(ipAddress="172.16.1.1", port="3332")
 
-l = [device1, device2, device3]
+l = [device1]
 
 for i in l:
     session.add(i)
